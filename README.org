@@ -4,9 +4,30 @@
 
 /Simple presentation mode for Emacs Org-mode/
 
-* Install
+* About Fork
 
-Just install =epresent= from melpa repositery.
+Note that this is a fork of the official version, which contains some of my own
+fixes to various issues. I would like these to be merged into the official
+version, but eschulte has been slow to respond to my pull requests, so I don't
+have too much hope about that.
+
+** Fixes
+
+   (You can also get this list with more details by checking the commit log.)
+
+   - Avoid redrawing everything on every page change (this is annoying and seems
+     unnecessary.)
+
+   - Make sure the presentation frame shows the intended buffer (this fixes a
+     bug in case there is a hook in after-make-frame-functions that switches new
+     frames to \*scratch\*.)
+
+   - Remove deprecated macro org-re (my Emacs warned about this, but it doesn't
+     say when it was deprecated, so I'm not sure this is a universally safe
+     patch.)
+
+   - Remove default F5/F12 keys to epresent-run (this overrides the custom keys
+     I had bound; it is better if the user can pick their own keys for this.)
 
 * Usage
 
